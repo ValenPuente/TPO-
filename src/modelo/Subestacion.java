@@ -6,9 +6,4 @@ public class Subestacion extends Ubicacion { // se extiende de la clase base
         super(nombre); // llama al constructor de la clase base
     }
 
-	@Override
-	public String getNombre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

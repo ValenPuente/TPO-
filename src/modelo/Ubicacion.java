@@ -9,6 +9,13 @@ public abstract class Ubicacion implements IUbicacion { // la clase ubicación e
         this.nombre = nombre;
     }
     
+    // getter, que heredan las clases que se expanden de la clase base
+    @Override
+    public String getNombre() {
+        return nombre; 
+    }
+    
+    // toString() que también heredan las clases que se expanden de la clase base Ubicación-->
     @Override
     public String toString() {
         return getClass().getSimpleName() + ": " + nombre;
