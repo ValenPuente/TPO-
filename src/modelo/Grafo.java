@@ -2,16 +2,16 @@ package modelo;
 
 import interfaces.IGrafo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayList; // Clase que implementa y soluciona los problemas de la interfaz List 
+import java.util.List; // interfaz List
 
 public class Grafo<T> implements IGrafo<T> {
-    private List<Nodo<T>> nodos = new ArrayList<>();
-    private List<Arista<T>> aristas = new ArrayList<>();
+    private List<Nodo<T>> nodos = new ArrayList<>(); // lista donde guardamos instancias de clase Nodo, que son del tipo Ubicación
+    private List<Arista<T>> aristas = new ArrayList<>(); // lista donde guardamos instancias de clase Aristas
 
     @Override
     public void agregarNodo(Nodo<T> nodo) {
-        nodos.add(nodo);
+        nodos.add(nodo); //
     }
 
     @Override
