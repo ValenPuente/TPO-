@@ -1,7 +1,7 @@
 package modelo;
 
-public class Pueblo extends Ubicacion {
-    public Pueblo(String nombre) {
+public class Subestacion extends Ubicacion {
+    public Subestacion(String nombre) {
         super(nombre);
     }
 
@@ -10,8 +10,4 @@ public class Pueblo extends Ubicacion {
 		// TODO Auto-generated method stub
 		return null;
 	}
-    
-    
-    
-    
 }
