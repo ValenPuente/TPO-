@@ -37,7 +37,7 @@ public class TestGrafo {
         Prim<Ubicacion> prim = new Prim<>();
         List<Arista<Ubicacion>> mst = prim.ejecutar(grafo, central);
 
-        System.out.println("Árbol de expansión mínima (MST) desde la Central Eléctrica:");
+        System.out.println("Árbol de expansión mínimam con raíz desde la Central Eléctrica:");
         for (Arista<Ubicacion> arista : mst) {
             System.out.println(arista);
         }
