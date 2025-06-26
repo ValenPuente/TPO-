@@ -45,9 +45,18 @@ public class TestGrafo {
         IPrim<IUbicacion> prim = new Prim<>();
         List<IArista<IUbicacion>> mst = prim.ejecutar(grafo, central);
 
-        System.out.println("Árbol de expansión mínima con raíz desde la Central Eléctrica:");
+        System.out.println("Árbol de Expansión Mínima (Prim):\n");
+
+        int total = 0;
         for (IArista<IUbicacion> arista : mst) {
-            System.out.println(arista);
+            String origen = arista.getOrigen().getValor().toString();
+            String destino = arista.getDestino().getValor().toString();
+            int peso = arista.getPeso();
+
+            System.out.printf("De %-20s a %-20s | Longitud: %3d\n", origen, destino, peso);
+            total += peso;
         }
+
+        System.out.println("\nLongitud total del cableado: " + total);
     }
 }
