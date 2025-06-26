@@ -7,5 +7,6 @@ import modelo.Nodo;
 import java.util.List;
 
 public interface IPrim<T> {
+	
     List<Arista<T>> ejecutar(Grafo<T> grafo, Nodo<T> nodoRaiz);
 }

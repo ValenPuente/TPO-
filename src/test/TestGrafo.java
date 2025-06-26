@@ -10,7 +10,7 @@ public class TestGrafo {
         Grafo<Ubicacion> grafo = new Grafo<>();
 
         Nodo<Ubicacion> central = new Nodo<>(new CentralElectrica("Central Eléctrica"));
-        Nodo<Ubicacion> p1 = new Nodo<>(new Pueblo("Tigre"));
+        Nodo<Ubicacion> p1 = new Nodo<>(new Pueblo("San Vicente"));
         Nodo<Ubicacion> p2 = new Nodo<>(new Pueblo("Caballito"));
         Nodo<Ubicacion> p3 = new Nodo<>(new Pueblo("Pueblo 3"));
         Nodo<Ubicacion> p4 = new Nodo<>(new Pueblo("Pueblo 4"));
