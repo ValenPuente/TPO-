@@ -1,10 +1,12 @@
 package interfaces;
 
-import modelo.Nodo;
+import java.util.List;
 
 public interface IGrafo<T> {
 	
-    void agregarNodo(Nodo<T> nodo);
-    void agregarArista(Nodo<T> origen, Nodo<T> destino, int peso);
+    void agregarNodo(INodo<T> nodo);
+    void agregarArista(INodo<T> origen, INodo<T> destino, int peso);
+    List<INodo<T>> getNodos();
+    List<IArista<T>> getAristas();
     
 }

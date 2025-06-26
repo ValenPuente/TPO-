@@ -1,8 +1,11 @@
 package interfaces;
 
-import modelo.Arista;
-
-public interface IArista<T> {
+public interface IArista<T> extends Comparable<IArista<T>> {
 	
-	 int compareTo(Arista<T> otra);
+	INodo<T> getOrigen();
+	INodo<T> getDestino();
+	int getPeso();
+	
+	@Override
+	int compareTo(IArista<T> otra);
 }

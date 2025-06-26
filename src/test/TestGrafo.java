@@ -2,20 +2,21 @@ package test;
 
 import modelo.*;
 import servicios.Prim;
+import interfaces.*;
 
 import java.util.List;
 
 public class TestGrafo {
     public static void main(String[] args) {
-        Grafo<Ubicacion> grafo = new Grafo<>();
+        IGrafo<IUbicacion> grafo = new Grafo<>();
 
-        Nodo<Ubicacion> central = new Nodo<>(new CentralElectrica("Central Eléctrica"));
-        Nodo<Ubicacion> p1 = new Nodo<>(new Pueblo("San Vicente"));
-        Nodo<Ubicacion> p2 = new Nodo<>(new Pueblo("Caballito"));
-        Nodo<Ubicacion> p3 = new Nodo<>(new Pueblo("Pueblo 3"));
-        Nodo<Ubicacion> p4 = new Nodo<>(new Pueblo("Pueblo 4"));
-        Nodo<Ubicacion> p5 = new Nodo<>(new Pueblo("Pueblo 5"));
-        Nodo<Ubicacion> p6 = new Nodo<>(new Pueblo("Pueblo 6"));
+        INodo<IUbicacion> central = new Nodo<>(new CentralElectrica("Central Eléctrica"));
+        INodo<IUbicacion> p1 = new Nodo<>(new Pueblo("San Vicente"));
+        INodo<IUbicacion> p2 = new Nodo<>(new Pueblo("Caballito"));
+        INodo<IUbicacion> p3 = new Nodo<>(new Pueblo("Pueblo 3"));
+        INodo<IUbicacion> p4 = new Nodo<>(new Pueblo("Pueblo 4"));
+        INodo<IUbicacion> p5 = new Nodo<>(new Pueblo("Pueblo 5"));
+        INodo<IUbicacion> p6 = new Nodo<>(new Pueblo("Pueblo 6"));
 
         grafo.agregarNodo(central);
         grafo.agregarNodo(p1);
@@ -34,11 +35,11 @@ public class TestGrafo {
         grafo.agregarArista(p2, p6, 2);
         grafo.agregarArista(p3, p6, 5);
 
-        Prim<Ubicacion> prim = new Prim<>();
-        List<Arista<Ubicacion>> mst = prim.ejecutar(grafo, central);
+        IPrim<IUbicacion> prim = new Prim<>();
+        List<IArista<IUbicacion>> mst = prim.ejecutar(grafo, central);
 
         System.out.println("Árbol de expansión mínima con raíz desde la Central Eléctrica:");
-        for (Arista<Ubicacion> arista : mst) {
+        for (IArista<IUbicacion> arista : mst) {
             System.out.println(arista);
         }
     }

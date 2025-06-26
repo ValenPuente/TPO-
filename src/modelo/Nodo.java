@@ -1,12 +1,15 @@
 package modelo;
 
-public class Nodo<T> {
+import interfaces.INodo;
+
+public class Nodo<T> implements INodo<T> {
     private T valor;
 
     public Nodo(T valor) {
         this.valor = valor;
     }
 
+    @Override
     public T getValor() {
         return valor;
     }
