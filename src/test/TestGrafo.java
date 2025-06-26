@@ -10,13 +10,14 @@ public class TestGrafo {
     public static void main(String[] args) {
         IGrafo<IUbicacion> grafo = new Grafo<>();
 
-        INodo<IUbicacion> central = new Nodo<>(new CentralElectrica("Central Eléctrica"));
-        INodo<IUbicacion> p1 = new Nodo<>(new Pueblo("San Vicente"));
-        INodo<IUbicacion> p2 = new Nodo<>(new Pueblo("Caballito"));
-        INodo<IUbicacion> p3 = new Nodo<>(new Pueblo("Pueblo 3"));
-        INodo<IUbicacion> p4 = new Nodo<>(new Pueblo("Pueblo 4"));
-        INodo<IUbicacion> p5 = new Nodo<>(new Pueblo("Pueblo 5"));
-        INodo<IUbicacion> p6 = new Nodo<>(new Pueblo("Pueblo 6"));
+        INodo<IUbicacion> central = new Nodo<>(new CentralElectrica("Dolores"));
+        INodo<IUbicacion> p1 = new Nodo<>(new Pueblo("Tandil"));
+        INodo<IUbicacion> p2 = new Nodo<>(new Pueblo("Las Flores"));
+        INodo<IUbicacion> p3 = new Nodo<>(new Pueblo("Buenos Aires"));
+        INodo<IUbicacion> p4 = new Nodo<>(new Pueblo("9 de Julio"));
+        INodo<IUbicacion> p5 = new Nodo<>(new Pueblo("Lobos"));
+        INodo<IUbicacion> p6 = new Nodo<>(new Pueblo("Mar del Plata"));
+        INodo<IUbicacion> p7 = new Nodo<>(new Pueblo("Chascomús"));
 
         grafo.agregarNodo(central);
         grafo.agregarNodo(p1);
@@ -25,6 +26,7 @@ public class TestGrafo {
         grafo.agregarNodo(p4);
         grafo.agregarNodo(p5);
         grafo.agregarNodo(p6);
+        grafo.agregarNodo(p7);
 
         grafo.agregarArista(central, p1, 5);
         grafo.agregarArista(central, p2, 7);
