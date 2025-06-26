@@ -1,5 +1,7 @@
 package interfaces;
 
-public interface INodo {
+public interface INodo<T> {
+	
+	T getValor();
 
 }

@@ -1,5 +1,6 @@
 package interfaces;
 
-public interface IPueblo {
-
+public interface IPueblo<T> {
+	
+	T getValor();
 }
