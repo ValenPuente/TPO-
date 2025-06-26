@@ -11,13 +11,13 @@ public class TestGrafo {
         IGrafo<IUbicacion> grafo = new Grafo<>();
 
         INodo<IUbicacion> central = new Nodo<>(new CentralElectrica("Dolores"));
-        INodo<IUbicacion> p1 = new Nodo<>(new Pueblo("Tandil"));
-        INodo<IUbicacion> p2 = new Nodo<>(new Pueblo("Las Flores"));
-        INodo<IUbicacion> p3 = new Nodo<>(new Pueblo("Buenos Aires"));
-        INodo<IUbicacion> p4 = new Nodo<>(new Pueblo("9 de Julio"));
-        INodo<IUbicacion> p5 = new Nodo<>(new Pueblo("Lobos"));
-        INodo<IUbicacion> p6 = new Nodo<>(new Pueblo("Mar del Plata"));
-        INodo<IUbicacion> p7 = new Nodo<>(new Pueblo("Chascomús"));
+        INodo<IUbicacion> p1 = new Nodo<>(new Ciudad("Tandil"));
+        INodo<IUbicacion> p2 = new Nodo<>(new Ciudad("Las Flores"));
+        INodo<IUbicacion> p3 = new Nodo<>(new Ciudad("Buenos Aires"));
+        INodo<IUbicacion> p4 = new Nodo<>(new Ciudad("9 de Julio"));
+        INodo<IUbicacion> p5 = new Nodo<>(new Ciudad("Lobos"));
+        INodo<IUbicacion> p6 = new Nodo<>(new Ciudad("Mar del Plata"));
+        INodo<IUbicacion> p7 = new Nodo<>(new Ciudad("Chascomús"));
 
         grafo.agregarNodo(central);
         grafo.agregarNodo(p1);
@@ -28,14 +28,19 @@ public class TestGrafo {
         grafo.agregarNodo(p6);
         grafo.agregarNodo(p7);
 
-        grafo.agregarArista(central, p1, 5);
-        grafo.agregarArista(central, p2, 7);
-        grafo.agregarArista(central, p3, 6);
-        grafo.agregarArista(p1, p4, 4);
-        grafo.agregarArista(p1, p5, 3);
-        grafo.agregarArista(p2, p5, 4);
-        grafo.agregarArista(p2, p6, 2);
-        grafo.agregarArista(p3, p6, 5);
+        grafo.agregarArista(central, p1, 4);
+        grafo.agregarArista(central, p2, 8);
+        grafo.agregarArista(central, p3, 4);
+        grafo.agregarArista(central, p5, 5);
+        grafo.agregarArista(central, p6, 10);
+        grafo.agregarArista(central, p7, 6);
+        grafo.agregarArista(p1, p2, 1);
+        grafo.agregarArista(p1, p6, 3);
+        grafo.agregarArista(p3, p7, 2);
+        grafo.agregarArista(p3, p5, 3);
+        grafo.agregarArista(p4, p5, 1);
+        grafo.agregarArista(p4, p2, 3);
+        grafo.agregarArista(p5, p7, 5);
 
         IPrim<IUbicacion> prim = new Prim<>();
         List<IArista<IUbicacion>> mst = prim.ejecutar(grafo, central);

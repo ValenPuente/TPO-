@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface IPueblo<T> {
+public interface ICiudad<T> {
 	
 	T getValor();
 }
