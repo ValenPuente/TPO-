@@ -2,6 +2,7 @@ package test;
 
 import modelo.*;
 import servicios.Prim;
+import servicios.FormateadorMST;
 import interfaces.*;
 
 import java.util.List;
@@ -45,18 +46,7 @@ public class TestGrafo {
         IPrim<IUbicacion> prim = new Prim<>();
         List<IArista<IUbicacion>> mst = prim.ejecutar(grafo, central);
 
-        System.out.println("Árbol de Expansión Mínima (Prim):\n");
-
-        int total = 0;
-        for (IArista<IUbicacion> arista : mst) {
-            String origen = arista.getOrigen().getValor().toString();
-            String destino = arista.getDestino().getValor().toString();
-            int peso = arista.getPeso();
-
-            System.out.printf("De %-20s a %-20s | Longitud: %3d\n", origen, destino, peso);
-            total += peso;
-        }
-
-        System.out.println("\nLongitud total del cableado: " + total);
+        FormateadorMST<IUbicacion> formateador = new FormateadorMST<>();
+        formateador.mostrarResultado(grafo, mst, "Central Eléctrica Dolores");
     }
 }

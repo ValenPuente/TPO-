@@ -31,4 +31,9 @@ public class Grafo<T> implements IGrafo<T> {
     public List<IArista<T>> getAristas() {
         return aristas;
     }
+    
+    @Override
+    public int calcularPesoTotal(List<IArista<T>> aristas) {
+        return aristas.stream().mapToInt(IArista::getPeso).sum();
+    }
 }

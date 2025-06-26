@@ -8,5 +8,6 @@ public interface IGrafo<T> {
     void agregarArista(INodo<T> origen, INodo<T> destino, int peso);
     List<INodo<T>> getNodos();
     List<IArista<T>> getAristas();
+    int calcularPesoTotal(List<IArista<T>> aristas);
     
 }

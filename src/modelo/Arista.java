@@ -41,4 +41,21 @@ public class Arista<T> implements IArista<T> { // ahora las aristas deben ser un
     public String toString() {
         return origen + " - " + destino + " : " + peso;
     }
+    
+    @Override
+    public String toFormattedString(int numero) {
+        String nombreOrigen = origen.getValor().toString();
+        String nombreDestino = destino.getValor().toString();
+        
+        // Extraer solo el nombre sin el prefijo "Ciudad:" o "CentralElectrica:"
+        if (nombreOrigen.contains(": ")) {
+            nombreOrigen = nombreOrigen.split(": ")[1];
+        }
+        if (nombreDestino.contains(": ")) {
+            nombreDestino = nombreDestino.split(": ")[1];
+        }
+        
+        return String.format("║ %2d. %-19s <-> %-20s (Peso: %2d)  ║", 
+            numero, nombreOrigen, nombreDestino, peso);
+    }
 }
